@@ -1,0 +1,12 @@
+[Unit]
+Description=Libvirt exporter Prometheus
+
+[Service]
+Type=simple
+PIDFile=/run/libvirt-exporter.pid
+ExecStart=/usr/local/bin/libvirt-exporter --web.listen-address=":9177"
+RestartSec=10s
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

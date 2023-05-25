@@ -1,0 +1,19 @@
+# nfpm example configuration file
+#
+# check https://nfpm.goreleaser.com/configuration for detailed usage
+#
+name: "libvirt-exporter"
+arch: "amd64"
+platform: "linux"
+version: "v1.0.0"
+section: "default"
+priority: "extra"
+description: |
+  https://github.com/gari/libvirt-exporter/commits/master
+homepage: "https://github.com/gari/libvirt-exporter/commits/master"
+license: "MIT"
+contents:
+- src: ./libvirt-exporter
+  dst: /usr/local/bin/libvirt-exporter
+- src: ./libvirt-exporter.service
+  dst: /usr/lib/systemd/system//libvirt-exporter.service
